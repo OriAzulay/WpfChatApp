@@ -18,11 +18,20 @@ namespace WpfChatApp
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Register : Window
     {
-        public MainWindow()
+        public Register()
         {
             InitializeComponent();
+        }
+
+        private void loginBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(this.username.Text);
+        }
+        private void login_link(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(this.username.Text);
         }
     }
 }

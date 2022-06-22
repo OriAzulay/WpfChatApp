@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\ori\source\repos\WpfChatApp\WpfChatApp\App.xaml
-11407045341
+3-690938026
 
-5-1240190686
+9156868752
 194-164764702
-MainWindow.xaml;
+Views\Login.xaml;Views\MainWindow.xaml;Views\Register.xaml;
 
-False
+True
 
