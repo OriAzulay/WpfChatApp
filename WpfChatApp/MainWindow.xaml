@@ -1,12 +1,36 @@
-﻿<Window x:Class="WpfChatApp.MainWindow"
+﻿<Window x:Class="WpfApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfChatApp"
+        xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
 
-    </Grid>
+    <Border Padding="10">
+        <StackPanel>
+            <TextBlock Text="Login" FontWeight="Bold" FontSize="40" Height="60" Width="109"/>
+            <StackPanel Width="286">
+                <Grid Height="132" Width="302">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="User name" Margin="39,54,188,58" RenderTransformOrigin="0.413,0.535"/>
+                    <TextBox Margin="39,108,72,0" Padding="2" Height="20" VerticalAlignment="Top"/>
+                    <TextBlock Text="Password" Margin="39,91,96,24"/>
+                    <TextBox Padding="2" Margin="39,72,72,41"/>
+                </Grid>
+
+            </StackPanel>
+            <Grid Height="34" Width="192">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="189*"/>
+                </Grid.ColumnDefinitions>
+                <Button Margin="0,43,10,-43" Content="Login" Grid.ColumnSpan="3"  />
+            </Grid>
+        </StackPanel>
+    </Border>
+
 </Window>
