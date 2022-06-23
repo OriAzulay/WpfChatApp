@@ -31,7 +31,7 @@
                     <ColumnDefinition Width="189*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="if you dont have an account, press here"/>
-                <Button x:Name="registerBtn" Click="registerBtn_Click" Margin="-6,-22,16,22" Content="register" Grid.ColumnSpan="3"  />
+                <Button x:Name="registerBtn"  Margin="-6,-22,16,22" Content="register" Grid.ColumnSpan="3"  />
             </Grid>
             <Grid/>
             <StackPanel Height="100" RenderTransformOrigin="0.5,0.5">
@@ -49,7 +49,7 @@
                         <ColumnDefinition Width="29*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button x:Name="login_link" Click="loginLink_Click" Content="if you have an account, press here" Background="White" BorderBrush="White" Margin="265,12,0,-11" HorizontalAlignment="Left" Width="234" Grid.ColumnSpan="2"/>
+                    <Button x:Name="link_login" Content="if you have an account, press here" Background="White" BorderBrush="White" Margin="265,12,0,-11" HorizontalAlignment="Left" Width="234" Grid.ColumnSpan="2"/>
                 </Grid>
             </StackPanel>
         </StackPanel>
