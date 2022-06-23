@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\ori\source\repos\WpfChatApp\WpfChatApp\App.xaml
-3-690938026
+4-2139791912
 
-9156868752
+10-1970247331
 194-164764702
-Views\Login.xaml;Views\MainWindow.xaml;Views\Register.xaml;
+Views\Chat.xaml;Views\Login.xaml;Views\MainWindow.xaml;Views\Register.xaml;
 
 True
 

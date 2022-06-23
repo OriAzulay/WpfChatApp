@@ -23,3 +23,4 @@ C:\Users\ori\source\repos\WpfChatApp\WpfChatApp\obj\Debug\net6.0-windows\Views\R
 C:\Users\ori\source\repos\WpfChatApp\WpfChatApp\obj\Debug\net6.0-windows\Views\MainWindow.g.cs
 C:\Users\ori\source\repos\WpfChatApp\WpfChatApp\obj\Debug\net6.0-windows\Views\MainWindow.baml
 C:\Users\ori\source\repos\WpfChatApp\WpfChatApp\obj\Debug\net6.0-windows\WpfChatApp.csproj.AssemblyReference.cache
+C:\Users\ori\source\repos\WpfChatApp\WpfChatApp\obj\Debug\net6.0-windows\Views\Chat.g.cs
