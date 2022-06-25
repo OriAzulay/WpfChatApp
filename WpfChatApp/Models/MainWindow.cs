@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Input;
+
 namespace WpfChatApp
 {
     /// <summary>
@@ -8,20 +10,37 @@ namespace WpfChatApp
     public partial class MainWindow : Window
     {
 
-        public MainWindow()
+        public MainWindow() 
         {
             InitializeComponent();
         }
 
-        private void loginBtn_Click(object sender, RoutedEventArgs e)
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show(this.username.Text);
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
-        private void regiLink_Click(object sender, RoutedEventArgs e)
+        private void ButtonMin_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(this.username.Text);
-            Uri uri = new Uri("Register.xaml", UriKind.Relative);
-            //this.NavigationService.Navigate(uri);
+            Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
+        private void ButtonRec_Click(object sender, RoutedEventArgs e)
+        {
+            if(Application.Current.MainWindow.WindowState != WindowState.Maximized)
+            {
+                Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            }
+            else
+            {
+                Application.Current.MainWindow.WindowState = WindowState.Normal;
+            }
+        }
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
     }
 }

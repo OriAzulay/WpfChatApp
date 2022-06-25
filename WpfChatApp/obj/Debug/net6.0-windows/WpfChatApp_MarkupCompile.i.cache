@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\ori\source\repos\WpfChatApp\WpfChatApp\obj\Debug\net6.0-windows\
+C:\Users\pc2\source\repos\WpfFinal\WpfChatApp\obj\Debug\net6.0-windows\
 WpfChatApp
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\ori\source\repos\WpfChatApp\WpfChatApp\App.xaml
-4-2139791912
-
-10-1970247331
-194-164764702
-Views\Chat.xaml;Views\Login.xaml;Views\MainWindow.xaml;Views\Register.xaml;
+C:\Users\pc2\source\repos\WpfFinal\WpfChatApp\App.xaml
+41594327124
+1497607836
+111830851117
+194-1951243044
+Themes\ChatItem.xaml;Themes\ContactCard.xaml;Themes\MessageBox.xaml;Views\MainWindow.xaml;
 
 True
 

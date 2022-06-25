@@ -4,39 +4,197 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfChatApp"
+        xmlns:viewmodel="clr-namespace:WpfChatApp.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="650" Width="1200"
+        Background="#32373F"
+        WindowStyle="none"
+        AllowsTransparency="true"
+        ResizeMode="CanResizeWithGrip">
 
-    <Border Padding="10">
-        <StackPanel>
-            <TextBlock Text="Login" FontWeight="Bold" FontSize="40" Height="60" Width="109"/>
-            <StackPanel Width="286">
-                <Grid Height="132" Width="302">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="User name" Margin="39,54,188,58" RenderTransformOrigin="0.413,0.535"/>
-                    <TextBox x:Name="password" Margin="39,108,72,0" Padding="2" Height="20" VerticalAlignment="Top"/>
-                    <TextBlock Text="Password" Margin="39,91,96,24"/>
-                    <TextBox x:Name="username" Padding="2" Margin="39,72,72,41"/>
-                </Grid>
+    <Window.DataContext>
+        <viewmodel:MainViewModel/>
 
-            </StackPanel>
-            <Grid Height="34" Width="192">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="189*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="if you dont have an account, press here"></TextBlock>
-                <Button x:Name="loginBtn" Click="loginBtn_Click" Margin="-3,5,13,-5" Content="Login" Grid.ColumnSpan="3"  />
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.ColumnSpan="2"
+                Background="#252525"
+                MouseDown="Border_MouseDown">
+
+            <Grid HorizontalAlignment="Stretch">
+                <Label Content="Chat"
+                       FontSize="13"
+                       Foreground="Gray"
+                       FontWeight="SemiBold"/>
+
+                <StackPanel HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+
+                    <Button Width="20" Height="20"
+                            Content="_"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="ExtraBold"
+                            Margin="0,0,0,5"
+                            Click="ButtonMin_Click"/>
+
+                    <Button Width="20" Height="20"
+                            Content="☐"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            Click="ButtonRec_Click"/>
+
+
+                    <Button Width="20" Height="20"
+                            Content="✕"
+                            Background="Transparent"
+                            Foreground="Gray"
+                            BorderThickness="0"
+                            FontWeight="Bold"
+                            Click="Close_Click"/>
+
+
+                </StackPanel>
+
+
             </Grid>
-            <StackPanel Height="100">
-                <Grid>
-                    <Button Content="if you don't have an account, press here" Click="regiLink_Click" Background="White" BorderBrush="White" Margin="266,29,0,-29" HorizontalAlignment="Left" Width="234"></Button>
-                </Grid>
+        </Border>
+
+
+        <Grid Background="#2F3136" 
+               Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="525"/>
+
+            </Grid.RowDefinitions>
+
+            <Label Content="Contacts"
+                   VerticalAlignment="Center"
+                   FontWeight="Medium"
+                   Foreground="Gray"
+                   Margin="8,0,0,0" Height="26" />
+
+            <ListView ItemsSource="{Binding Contacts}"
+                      Background="Transparent"
+                      BorderThickness="2"
+                      Grid.Row="2"
+                      ItemContainerStyle="{StaticResource ContactCard}"/>
+
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal"
+                        Background="#292B2F">
+
+                <Border CornerRadius="25"
+                        Width="30" Height="30"
+                        Background="#3bff6f"
+                        Margin="18,0,0,0"/>
+
+                <StackPanel VerticalAlignment="Center">
+                    <Label Content="Username"
+                           Foreground="White"
+                           FontWeight="SemiBold"
+                           Margin="0,-5,0,-5"/>
+                    <Label Content="Costum Status"
+                           Foreground="Gray"
+                           FontWeight="SemiBold"
+                           FontSize="10"
+                           Margin="0,-8,0,-5"/>
+                </StackPanel>
+
             </StackPanel>
-        </StackPanel>
-    </Border>
+
+        </Grid>
+
+        <Grid Grid.Column="2"
+              Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+
+            <Border BorderBrush="#2F3136"
+                BorderThickness="0,0,0,2">
+                <Grid HorizontalAlignment="Stretch"
+                  Margin="8">
+
+                    <Label Content="@Username"
+                       Foreground="White"
+                       FontWeight="Bold"
+                       Margin="5,0,5,0"
+                       VerticalAlignment="Center"/>
+
+                    <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+
+
+                        <Image Width="20" Height="20"
+                               RenderOptions.BitmapScalingMode="Fant"
+                               Margin="5,0,5,0"
+                               Source="C:\Users\pc2\source\repos\WpfFinal\WpfChatApp\Backgrounds\camera.png"/>
+
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+
+            <ListView ItemsSource="{Binding SelectedContact.Messages}"
+                      Background="Transparent"
+                      BorderThickness="0"
+                      ItemContainerStyle="{StaticResource ChatItem}"
+                      Margin="8,0,0,0"
+                      Grid.Row="1"/>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="90"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox
+                           Text="Message @Username"
+                           Height="50"
+                           Background="White"
+                           Style="{StaticResource MessageBox}"
+                           Grid.ColumnSpan="2" />
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Grid.Column="1"
+                            Margin="0,0,16,0">
+
+                    <Image Source="C:\Users\pc2\source\repos\WpfFinal\WpfChatApp\Backgrounds\plus.png"
+                           Width="20" Height="20"
+                           RenderOptions.BitmapScalingMode="Fant"
+                           Margin="5,5,16,0"/>
+
+                    <Image Source="C:\Users\pc2\source\repos\WpfFinal\WpfChatApp\Backgrounds\send.png"
+                           Width="20" Height="20"
+                           RenderOptions.BitmapScalingMode="Fant"
+                           Margin="5,5,16,0"/>
+
+                </StackPanel>
+        
+
+            </Grid>
+
+        </Grid>
+    </Grid>
 
 </Window>
